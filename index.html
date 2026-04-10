@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -198,7 +198,7 @@
       color: #7B5A3E;
     }
 
-    /* Gallery */
+    /* Gallery - Enhanced for clear photos */
     .gallery-section {
       padding: 100px 0;
       background: white;
@@ -220,8 +220,8 @@
 
     .masonry-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
     }
 
     .design-item {
@@ -229,23 +229,67 @@
       overflow: hidden;
       background: #FFFFFF;
       transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.08);
+      cursor: pointer;
     }
 
     .design-item:hover {
       transform: translateY(-8px);
-      box-shadow: 0 30px 40px -16px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 30px 40px -16px rgba(0, 0, 0, 0.15);
     }
 
     .img-holder {
       height: 320px;
       background-size: cover;
       background-position: center;
-      transition: transform 0.5s;
+      background-repeat: no-repeat;
+      transition: transform 0.6s ease;
+    }
+
+    .design-item:hover .img-holder {
+      transform: scale(1.03);
     }
 
     .card-content {
       padding: 24px;
+    }
+
+    /* Lightbox for better photo viewing */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.92);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 85%;
+      object-fit: contain;
+      border-radius: 20px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+      font-weight: 300;
     }
 
     /* AI Assistant */
@@ -335,7 +379,7 @@
       cursor: pointer;
     }
 
-    /* Enhanced Contact Section with exact numbers provided */
+    /* Contact Section */
     .contact-showcase {
       background: #23201C;
       color: #F0E7DD;
@@ -368,7 +412,7 @@
       align-items: center;
       gap: 12px;
       font-weight: 600;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       border: 1px solid #B5825840;
       transition: 0.2s;
     }
@@ -390,7 +434,7 @@
     }
 
     .big-phone {
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 800;
       background: #EFDFCF;
       display: inline-block;
@@ -417,11 +461,6 @@
       font-weight: 700;
       border: none;
       cursor: pointer;
-    }
-
-    .call-btn {
-      background: #4F8EF5;
-      color: white;
     }
 
     .trust-premium {
@@ -461,9 +500,10 @@
 
     .trust-right {
       flex: 1;
-      background: url('https://i.ibb.co/21dtw5w9/1.jpg') center/cover;
       min-height: 340px;
       border-radius: 32px;
+      background-size: cover;
+      background-position: center;
       box-shadow: 0 30px 35px -18px rgba(0,0,0,0.1);
     }
 
@@ -506,6 +546,10 @@
         width: 280px;
         right: 16px;
       }
+      .masonry-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
     }
   </style>
 </head>
@@ -545,7 +589,7 @@
     </div>
   </section>
 
-  <!-- Gallery Showcase with exact images provided -->
+  <!-- Gallery Showcase - All your 23 images will appear clearly -->
   <section class="gallery-section" id="galleryMain">
     <div class="container">
       <h2 class="section-title">Curated spatial narratives</h2>
@@ -554,7 +598,7 @@
     </div>
   </section>
 
-  <!-- Trust Section with user image -->
+  <!-- Trust Section -->
   <section class="trust-premium">
     <div class="container trust-flex">
       <div class="trust-left">
@@ -563,18 +607,17 @@
         <p>Every project at DeSingnz undergoes a rigorous research phase — material psychology, spatial flow, and biophilic alignment. Our global team of architects & curators ensures a signature that is both timeless and future-forward.</p>
         <div class="quote-text">“Design is the silent ambassador of your brand & soul — we make it speak with integrity.” — Uvesh, Design Principal</div>
       </div>
-      <div class="trust-right" style="background-image: url('https://i.ibb.co/N2DjPydd/2.jpg');"></div>
+      <div class="trust-right" id="trustImage"></div>
     </div>
   </section>
 
-  <!-- Contact Section with ONLY the numbers provided: +919539925568, +919539410051, 9744549856 -->
+  <!-- Contact Section with exact numbers -->
   <section class="contact-showcase" id="contactZone">
     <div class="contact-gold">
       <i class="fas fa-star-of-life" style="font-size: 2rem; color: #E1C197;"></i>
       <h3 style="font-size: 2rem; margin: 12px 0;">Begin your journey</h3>
       <p>Speak directly with a senior design architect — calls, WhatsApp & virtual consultations.</p>
       
-      <!-- Exact numbers as requested -->
       <div class="phone-grid">
         <div class="phone-card"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919539925568" target="_blank">+91 95399 25568</a> <span style="font-size:0.7rem;">Primary / WhatsApp</span></div>
         <div class="phone-card"><i class="fas fa-phone-alt"></i> <a href="tel:+919539410051">+91 95394 10051</a> <span style="font-size:0.7rem;">Direct Call</span></div>
@@ -604,6 +647,12 @@
   </div>
 </footer>
 
+<!-- Lightbox for clear photo viewing -->
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightboxImg" src="" alt="Full view">
+</div>
+
 <!-- AI Assistant -->
 <div class="ai-assistant">
   <div class="ai-bubble" id="aiBubbleBtn">
@@ -628,8 +677,8 @@
 </div>
 
 <script>
-  // EXACT IMAGES FROM USER: Using all provided imgbb links
-  const userProvidedImages = [
+  // ALL YOUR EXACT IMAGES (23 high-quality interior photos)
+  const userImages = [
     "https://i.ibb.co/21dtw5w9/1.jpg",
     "https://i.ibb.co/N2DjPydd/2.jpg",
     "https://i.ibb.co/prBSpSjC/3.jpg",
@@ -655,26 +704,170 @@
     "https://i.ibb.co/Y7XkkQWk/23.jpg"
   ];
   
-  // Creative titles and descriptions for each image to match premium interior design
-  const designPortfolio = [
-    { title: "Ethereal Monochrome Loft", desc: "Fluid shadows & sculptural forms", tag: "Contemporary", img: userProvidedImages[0] },
-    { title: "Golden Hour Residence", desc: "Warm textures & ambient light", tag: "Luxury", img: userProvidedImages[1] },
-    { title: "Minimalist Sanctuary", desc: "Pure serenity, raw elegance", tag: "Minimalist", img: userProvidedImages[2] },
-    { title: "Botanical Haven", desc: "Indoor greenery meets modernism", tag: "Biophilic", img: userProvidedImages[3] },
-    { title: "Neo-Classical Lounge", desc: "Marble accents & timeless proportion", tag: "Classic", img: userProvidedImages[4] },
-    { title: "Rustic Heritage", desc: "Vintage charm with modern comfort", tag: "Rustic", img: userProvidedImages[5] },
-    { title: "Mediterranean Breeze", desc: "Terracotta, arches & coastal soul", tag: "Mediterranean", img: userProvidedImages[6] },
-    { title: "Dark Academia Study", desc: "Rich woods & intellectual depth", tag: "Library", img: userProvidedImages[7] },
-    { title: "Zen Tea House", desc: "Japanese minimalism & tranquility", tag: "Japandi", img: userProvidedImages[8] },
-    { title: "Art Deco Revival", desc: "Geometric glamour & bold metals", tag: "Art Deco", img: userProvidedImages[9] },
-    { title: "Urban Jungle", desc: "Lush plant integration & raw concrete", tag: "Urban", img: userProvidedImages[10] },
-    { title: "Scandinavian Hygge", desc: "Warm neutrals, cozy layers", tag: "Scandi", img: userProvidedImages[11] },
-    { title: "Moroccan Riad", desc: "Intricate tilework & arched doorways", tag: "Moroccan", img: userProvidedImages[12] },
-    { title: "Futuristic Pod", desc: "Curved resin & smart glass", tag: "Futuristic", img: userProvidedImages[13] },
-    { title: "Wabi-Sabi Retreat", desc: "Imperfect beauty & natural patina", tag: "Wabi-Sabi", img: userProvidedImages[14] },
-    { title: "French Chateau", desc: "Ornate details & regal charm", tag: "French", img: userProvidedImages[15] },
-    { title: "Industrial Loft", desc: "Exposed brick & steel accents", tag: "Industrial", img: userProvidedImages[16] },
-    { title: "Coastal Serenity", desc: "Driftwood, linen & ocean hues", tag: "Coastal", img: userProvidedImages[17] },
-    { title: "Boho Chic", desc: "Eclectic patterns & global decor", tag: "Bohemian", img: userProvidedImages[18] },
-    { title: "Mid-Century Modern", desc: "Retro curves & walnut veneer", tag: "Mid-Century", img: userProvidedImages[19] },
-    { title: "Italian Palazzo", desc: "Fresco ceilings & baroque elegance", tag: "Italian", img: userProvidedImages[20] 
+  // Rich titles for each image
+  const galleryData = [
+    { title: "Ethereal Monochrome", desc: "Dramatic shadows & sculptural forms", tag: "Contemporary" },
+    { title: "Golden Hour Villa", desc: "Warm Mediterranean textures", tag: "Luxury" },
+    { title: "Minimalist Sanctuary", desc: "Pure serenity, raw elegance", tag: "Minimalist" },
+    { title: "Botanical Atrium", desc: "Indoor greenery meets modernism", tag: "Biophilic" },
+    { title: "Neo-Classical Lounge", desc: "Marble & timeless proportion", tag: "Classic" },
+    { title: "Rustic Heritage", desc: "Vintage charm, modern comfort", tag: "Rustic" },
+    { title: "Mediterranean Breeze", desc: "Terracotta & coastal soul", tag: "Mediterranean" },
+    { title: "Dark Academia", desc: "Rich woods & intellectual depth", tag: "Library" },
+    { title: "Zen Tea House", desc: "Japanese minimalism & tranquility", tag: "Japandi" },
+    { title: "Art Deco Revival", desc: "Geometric glamour & bold metals", tag: "Art Deco" },
+    { title: "Urban Jungle", desc: "Lush plants & raw concrete", tag: "Urban" },
+    { title: "Scandinavian Hygge", desc: "Warm neutrals, cozy layers", tag: "Scandi" },
+    { title: "Moroccan Riad", desc: "Intricate tilework & arches", tag: "Moroccan" },
+    { title: "Futuristic Pod", desc: "Curved resin & smart glass", tag: "Futuristic" },
+    { title: "Wabi-Sabi Retreat", desc: "Imperfect beauty & natural patina", tag: "Wabi-Sabi" },
+    { title: "French Chateau", desc: "Ornate details & regal charm", tag: "French" },
+    { title: "Industrial Loft", desc: "Exposed brick & steel", tag: "Industrial" },
+    { title: "Coastal Serenity", desc: "Driftwood, linen & ocean hues", tag: "Coastal" },
+    { title: "Boho Chic", desc: "Eclectic patterns & global decor", tag: "Bohemian" },
+    { title: "Mid-Century Modern", desc: "Retro curves & walnut", tag: "Mid-Century" },
+    { title: "Italian Palazzo", desc: "Baroque elegance & frescoes", tag: "Italian" },
+    { title: "Sculptural Penthouse", desc: "Fluid geometry & custom art", tag: "Penthouse" },
+    { title: "Earth Dwelling", desc: "Rammed earth & organic flow", tag: "Sustainable" }
+  ];
+  
+  // Render Gallery with all images (ensuring clear display)
+  function renderGallery() {
+    const galleryDiv = document.getElementById('dynamicGallery');
+    if (!galleryDiv) return;
+    galleryDiv.innerHTML = '';
+    
+    for (let i = 0; i < userImages.length; i++) {
+      const item = galleryData[i];
+      const imgUrl = userImages[i];
+      const card = document.createElement('div');
+      card.className = 'design-item';
+      card.setAttribute('data-fullimg', imgUrl);
+      card.innerHTML = `
+        <div class="img-holder" style="background-image: url('${imgUrl}');"></div>
+        <div class="card-content">
+          <h3 style="font-size: 1.4rem;">${item.title}</h3>
+          <p>${item.desc}</p>
+          <span style="background: #F1E8DE; padding: 4px 12px; border-radius: 40px; font-size: 0.7rem;">${item.tag}</span>
+        </div>
+      `;
+      // Click to open lightbox for full clarity
+      card.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openLightbox(imgUrl);
+      });
+      galleryDiv.appendChild(card);
+    }
+  }
+  
+  // Lightbox functionality for clear photo viewing
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.querySelector('.lightbox-close');
+  
+  function openLightbox(imgSrc) {
+    lightboxImg.src = imgSrc;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  
+  // Set trust section image (use 2nd image for consistency)
+  function setTrustImage() {
+    const trustDiv = document.getElementById('trustImage');
+    if (trustDiv && userImages[1]) {
+      trustDiv.style.backgroundImage = `url('${userImages[1]}')`;
+    }
+  }
+  
+  // AI Knowledge
+  const aiKnowledge = {
+    "japandi": "Japandi blends Japanese minimalism with Scandinavian warmth. Use light wood, neutral tones, and functional ceramics.",
+    "biophilic": "Biophilic design connects nature indoors — living walls, natural light, organic textures and water features.",
+    "modern luxury": "High-end minimalism with bold art, metallic accents, plush velvets and statement lighting.",
+    "color palette": "2025 trending: warm earths, sage green, terracotta, deep indigo, and creamy off-whites.",
+    "sustainable": "We recommend recycled timber, low-VOC paints, and energy-smart fixtures.",
+    "default": "I can suggest styles like Japandi, Biophilic, Modern Classic, or provide color advice. Ask anything!"
+  };
+  
+  function getAIResponse(query) {
+    const q = query.toLowerCase();
+    if (q.includes("japandi")) return aiKnowledge.japandi;
+    if (q.includes("biophil") || q.includes("nature")) return aiKnowledge.biophilic;
+    if (q.includes("luxury") || q.includes("premium")) return aiKnowledge["modern luxury"];
+    if (q.includes("color") || q.includes("palette") || q.includes("shade")) return aiKnowledge["color palette"];
+    if (q.includes("sustainable") || q.includes("eco")) return aiKnowledge.sustainable;
+    return aiKnowledge.default;
+  }
+  
+  function setupAI() {
+    const bubble = document.getElementById('aiBubbleBtn');
+    const modal = document.getElementById('aiModal');
+    const closeBtn = document.getElementById('closeAi');
+    const askBtn = document.getElementById('askAiBtn');
+    const userInput = document.getElementById('aiUserInput');
+    const responseDiv = document.getElementById('aiResponseMsg');
+    
+    bubble.addEventListener('click', () => modal.classList.toggle('hidden-ai'));
+    closeBtn.addEventListener('click', () => modal.classList.add('hidden-ai'));
+    askBtn.addEventListener('click', () => {
+      const question = userInput.value.trim();
+      if (question === "") {
+        responseDiv.innerHTML = "💡 Ask me about Japandi, biophilic design, color trends or sustainable materials!";
+        return;
+      }
+      responseDiv.innerHTML = `✨ ${getAIResponse(question)}`;
+      userInput.value = '';
+    });
+    userInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') askBtn.click(); });
+  }
+  
+  function setupContactFeatures() {
+    const copyBtn = document.getElementById('copyPhoneBtn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText("919539925568").then(() => {
+          copyBtn.innerHTML = "✓ Copied!";
+          setTimeout(() => copyBtn.innerHTML = "Copy Number <i class='fas fa-copy'></i>", 1800);
+        });
+      });
+    }
+    const whatsappBtn = document.getElementById('whatsappIndiaBtn');
+    if (whatsappBtn) {
+      whatsappBtn.addEventListener('click', () => window.open('https://wa.me/919539925568?text=Hello%20DeSingnz%2C%20I%27m%20interested%20in%20your%20AI%20interior%20design%20services.', '_blank'));
+    }
+    const callIndiaBtn = document.getElementById('callIndiaBtn');
+    if (callIndiaBtn) {
+      callIndiaBtn.addEventListener('click', () => window.location.href = 'tel:+919539410051');
+    }
+    const callNav = document.getElementById('callNavBtn');
+    if (callNav) {
+      callNav.addEventListener('click', (e) => { e.preventDefault(); window.location.href = 'tel:+919539925568'; });
+    }
+    const scrollBtn = document.getElementById('scrollToContact');
+    if (scrollBtn) scrollBtn.addEventListener('click', () => document.getElementById('contactZone').scrollIntoView({ behavior: 'smooth' }));
+    const exploreBtn = document.getElementById('exploreGalleryBtn');
+    if (exploreBtn) exploreBtn.addEventListener('click', () => document.getElementById('galleryMain').scrollIntoView({ behavior: 'smooth' }));
+  }
+  
+  // Initialize everything
+  function init() {
+    renderGallery();
+    setTrustImage();
+    setupAI();
+    setupContactFeatures();
+  }
+  
+  init();
+</script>
+</body>
+</html>
