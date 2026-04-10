@@ -1,9 +1,9 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
-  <title>DeSingnz.com | AI-Powered Interior Intelligence</title>
+  <title>de-SIGNz | AI-Powered Interior Intelligence</title>
   <!-- Google Fonts + Font Awesome + Material Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -141,6 +141,21 @@
       color: #1E1915;
     }
 
+    /* RED NAME STYLE - as requested */
+    .red-name {
+      color: #cc3311;
+      font-size: 4rem;
+      display: inline-block;
+      text-shadow: 0 2px 10px rgba(200, 60, 30, 0.2);
+      background: linear-gradient(135deg, #cc3311, #ff5533);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-decoration: underline;
+      text-decoration-color: #cc3311;
+      text-underline-offset: 12px;
+    }
+
     .hero-left p {
       font-size: 1.1rem;
       color: #5A534A;
@@ -198,7 +213,7 @@
       color: #7B5A3E;
     }
 
-    /* Gallery - Enhanced for clear photos */
+    /* Gallery */
     .gallery-section {
       padding: 100px 0;
       background: white;
@@ -254,7 +269,7 @@
       padding: 24px;
     }
 
-    /* Lightbox for better photo viewing */
+    /* Lightbox */
     .lightbox {
       position: fixed;
       top: 0;
@@ -280,7 +295,6 @@
       max-height: 85%;
       object-fit: contain;
       border-radius: 20px;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
     }
     .lightbox-close {
       position: absolute;
@@ -289,7 +303,6 @@
       color: white;
       font-size: 40px;
       cursor: pointer;
-      font-weight: 300;
     }
 
     /* AI Assistant */
@@ -425,7 +438,6 @@
     .phone-card a {
       color: #FFEFE0;
       text-decoration: none;
-      letter-spacing: 0.5px;
     }
 
     .phone-card:hover {
@@ -442,7 +454,6 @@
       border-radius: 70px;
       color: #1F1B17;
       margin: 12px 0;
-      font-family: monospace;
     }
 
     .action-buttons {
@@ -504,7 +515,6 @@
       border-radius: 32px;
       background-size: cover;
       background-position: center;
-      box-shadow: 0 30px 35px -18px rgba(0,0,0,0.1);
     }
 
     footer {
@@ -523,9 +533,7 @@
       padding: 8px 16px;
       border-radius: 60px;
       font-size: 0.75rem;
-      font-weight: 500;
       color: #F3E7DB;
-      z-index: 1100;
       font-family: monospace;
       border-left: 3px solid #E2B68C;
       pointer-events: none;
@@ -538,17 +546,15 @@
       .hero-left h1 {
         font-size: 2.5rem;
       }
+      .red-name {
+        font-size: 2.8rem;
+      }
       .phone-card {
         font-size: 0.9rem;
         padding: 8px 16px;
       }
-      .ai-modal {
-        width: 280px;
-        right: 16px;
-      }
       .masonry-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
       }
     }
   </style>
@@ -557,7 +563,7 @@
 
 <nav class="glass-nav">
   <div class="container nav-flex">
-    <div class="logo">DeSingnz<span>.com</span></div>
+    <div class="logo">de-SIGNz</div>
     <div class="nav-links">
       <a href="#">Studio</a>
       <a href="#">Portfolio</a>
@@ -572,8 +578,8 @@
     <div class="container hero-wrapper">
       <div class="hero-left">
         <div class="hero-badge">AI-DESIGN FUSION • SINCE 2015</div>
-        <h1>Where vision meets <br>intelligent spatial design</h1>
-        <p>DeSingnz.com blends timeless craftsmanship with AI-augmented creativity — bespoke interiors that breathe authenticity and innovation.</p>
+        <h1>Where vision meets <br><span class="red-name">de-SIGNz</span></h1>
+        <p>de-SIGNz blends timeless craftsmanship with AI-augmented creativity — bespoke interiors that breathe authenticity and innovation.</p>
         <div class="btn-group">
           <button class="btn-primary" id="exploreGalleryBtn">Explore masterpieces →</button>
           <button class="btn-outline" id="scrollToContact">Talk to designer</button>
@@ -589,7 +595,7 @@
     </div>
   </section>
 
-  <!-- Gallery Showcase - All your 23 images will appear clearly -->
+  <!-- Gallery Section -->
   <section class="gallery-section" id="galleryMain">
     <div class="container">
       <h2 class="section-title">Curated spatial narratives</h2>
@@ -604,14 +610,14 @@
       <div class="trust-left">
         <h2>Deeply researched, emotionally resonant.</h2>
         <div class="signature"></div>
-        <p>Every project at DeSingnz undergoes a rigorous research phase — material psychology, spatial flow, and biophilic alignment. Our global team of architects & curators ensures a signature that is both timeless and future-forward.</p>
-        <div class="quote-text">“Design is the silent ambassador of your brand & soul — we make it speak with integrity.” — Uvesh, Design Principal</div>
+        <p>Every project at de-SIGNz undergoes a rigorous research phase — material psychology, spatial flow, and biophilic alignment. Our global team of architects & curators ensures a signature that is both timeless and future-forward.</p>
+        <div class="quote-text">“Design is the silent ambassador of your brand & soul — we make it speak with integrity.” — Design Principal, de-SIGNz</div>
       </div>
       <div class="trust-right" id="trustImage"></div>
     </div>
   </section>
 
-  <!-- Contact Section with exact numbers -->
+  <!-- Contact Section -->
   <section class="contact-showcase" id="contactZone">
     <div class="contact-gold">
       <i class="fas fa-star-of-life" style="font-size: 2rem; color: #E1C197;"></i>
@@ -619,12 +625,13 @@
       <p>Speak directly with a senior design architect — calls, WhatsApp & virtual consultations.</p>
       
       <div class="phone-grid">
-        <div class="phone-card"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919539925568" target="_blank">+91 95399 25568</a> <span style="font-size:0.7rem;">Primary / WhatsApp</span></div>
-        <div class="phone-card"><i class="fas fa-phone-alt"></i> <a href="tel:+919539410051">+91 95394 10051</a> <span style="font-size:0.7rem;">Direct Call</span></div>
-        <div class="phone-card"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919744549856" target="_blank">+91 97445 49856</a> <span style="font-size:0.7rem;">WhatsApp</span></div>
+        <div class="phone-card"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919539925568" target="_blank">+91 95399 25568</a></div>
+        <div class="phone-card"><i class="fas fa-phone-alt"></i> <a href="tel:+919539410051">+91 95394 10051</a></div>
+        <div class="phone-card"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919744549856" target="_blank">+91 97445 49856</a></div>
       </div>
       
-      <div class="big-phone" id="phoneNumberDisplay">+91 95399 25568</div>
+      <div class="big-phone">de-SIGNz | Interior's & Builder's</div>
+      <div class="big-phone" style="font-size:1rem; background:#4A3A2C; color:#EFDFCF;">4/187 A, ALUVA</div>
       
       <div class="action-buttons">
         <button class="btn-primary" id="copyPhoneBtn" style="background:#D6B188; color:#1C1C1A;">Copy Number <i class="fas fa-copy"></i></button>
@@ -643,11 +650,11 @@
       <span><i class="fab fa-pinterest"></i> Pinterest</span>
       <span><i class="fab fa-linkedin"></i> LinkedIn</span>
     </div>
-    <p>© 2025 DeSingnz.com — AI augmented interior intelligence | All materials researched ethically</p>
+    <p>© 2025 de-SIGNz — AI augmented interior intelligence | Interior's & Builder's | 4/187 A, ALUVA</p>
   </div>
 </footer>
 
-<!-- Lightbox for clear photo viewing -->
+<!-- Lightbox -->
 <div id="lightbox" class="lightbox">
   <span class="lightbox-close">&times;</span>
   <img id="lightboxImg" src="" alt="Full view">
@@ -660,214 +667,73 @@
   </div>
   <div id="aiModal" class="ai-modal hidden-ai">
     <div class="ai-header">
-      <h4>✨ DeSign AI</h4>
+      <h4>✨ de-SIGNz AI</h4>
       <i class="fas fa-times" id="closeAi" style="cursor: pointer;"></i>
     </div>
     <div class="ai-response" id="aiResponseMsg">Hello! I'm your design concierge. Ask me about styles, materials, or trending palettes.</div>
     <div class="ai-input-group">
-      <input type="text" id="aiUserInput" placeholder="e.g., Japandi or biophilic design..." autocomplete="off">
+      <input type="text" id="aiUserInput" placeholder="e.g., Japandi or biophilic design...">
       <button id="askAiBtn">Ask</button>
     </div>
-    <p style="font-size: 10px; margin-top: 10px; opacity: 0.6;">Powered by free research & material library</p>
   </div>
 </div>
 
 <div class="dev-badge">
-  <i class="fas fa-code-branch"></i> TurboIG • Uvesh • full feature AI | responsive 360°
+  <i class="fas fa-code-branch"></i> de-SIGNz • Interior's & Builder's • ALUVA
 </div>
 
 <script>
-  // ALL YOUR EXACT IMAGES (23 high-quality interior photos)
+  // All 23 images
   const userImages = [
-    "https://i.ibb.co/21dtw5w9/1.jpg",
-    "https://i.ibb.co/N2DjPydd/2.jpg",
-    "https://i.ibb.co/prBSpSjC/3.jpg",
-    "https://i.ibb.co/FLzZJL7x/4.jpg",
-    "https://i.ibb.co/20fjcBbS/5.jpg",
-    "https://i.ibb.co/7Nbb38TF/6.jpg",
-    "https://i.ibb.co/ZRJNFfXp/7.jpg",
-    "https://i.ibb.co/tMsJng74/8.jpg",
-    "https://i.ibb.co/xtQG4Ncx/9.jpg",
-    "https://i.ibb.co/whMdNrMx/10.jpg",
-    "https://i.ibb.co/hJ90H2wL/11.jpg",
-    "https://i.ibb.co/8gPGytrd/12.jpg",
-    "https://i.ibb.co/zVTk98bh/13.jpg",
-    "https://i.ibb.co/YThfZ3hc/14.jpg",
-    "https://i.ibb.co/WNXgsBNR/15.jpg",
-    "https://i.ibb.co/MmHtDkp/16.jpg",
-    "https://i.ibb.co/W1GCf2b/17.jpg",
-    "https://i.ibb.co/V00FRrp4/18.jpg",
-    "https://i.ibb.co/PGcY1Ng9/19.jpg",
-    "https://i.ibb.co/8nf9GCxD/20.jpg",
-    "https://i.ibb.co/cS6cKRBN/21.jpg",
-    "https://i.ibb.co/bjtVKyfT/22.jpg",
-    "https://i.ibb.co/Y7XkkQWk/23.jpg"
+    "https://i.ibb.co/21dtw5w9/1.jpg", "https://i.ibb.co/N2DjPydd/2.jpg", "https://i.ibb.co/prBSpSjC/3.jpg",
+    "https://i.ibb.co/FLzZJL7x/4.jpg", "https://i.ibb.co/20fjcBbS/5.jpg", "https://i.ibb.co/7Nbb38TF/6.jpg",
+    "https://i.ibb.co/ZRJNFfXp/7.jpg", "https://i.ibb.co/tMsJng74/8.jpg", "https://i.ibb.co/xtQG4Ncx/9.jpg",
+    "https://i.ibb.co/whMdNrMx/10.jpg", "https://i.ibb.co/hJ90H2wL/11.jpg", "https://i.ibb.co/8gPGytrd/12.jpg",
+    "https://i.ibb.co/zVTk98bh/13.jpg", "https://i.ibb.co/YThfZ3hc/14.jpg", "https://i.ibb.co/WNXgsBNR/15.jpg",
+    "https://i.ibb.co/MmHtDkp/16.jpg", "https://i.ibb.co/W1GCf2b/17.jpg", "https://i.ibb.co/V00FRrp4/18.jpg",
+    "https://i.ibb.co/PGcY1Ng9/19.jpg", "https://i.ibb.co/8nf9GCxD/20.jpg", "https://i.ibb.co/cS6cKRBN/21.jpg",
+    "https://i.ibb.co/bjtVKyfT/22.jpg", "https://i.ibb.co/Y7XkkQWk/23.jpg"
   ];
-  
-  // Rich titles for each image
-  const galleryData = [
-    { title: "Ethereal Monochrome", desc: "Dramatic shadows & sculptural forms", tag: "Contemporary" },
-    { title: "Golden Hour Villa", desc: "Warm Mediterranean textures", tag: "Luxury" },
-    { title: "Minimalist Sanctuary", desc: "Pure serenity, raw elegance", tag: "Minimalist" },
-    { title: "Botanical Atrium", desc: "Indoor greenery meets modernism", tag: "Biophilic" },
-    { title: "Neo-Classical Lounge", desc: "Marble & timeless proportion", tag: "Classic" },
-    { title: "Rustic Heritage", desc: "Vintage charm, modern comfort", tag: "Rustic" },
-    { title: "Mediterranean Breeze", desc: "Terracotta & coastal soul", tag: "Mediterranean" },
-    { title: "Dark Academia", desc: "Rich woods & intellectual depth", tag: "Library" },
-    { title: "Zen Tea House", desc: "Japanese minimalism & tranquility", tag: "Japandi" },
-    { title: "Art Deco Revival", desc: "Geometric glamour & bold metals", tag: "Art Deco" },
-    { title: "Urban Jungle", desc: "Lush plants & raw concrete", tag: "Urban" },
-    { title: "Scandinavian Hygge", desc: "Warm neutrals, cozy layers", tag: "Scandi" },
-    { title: "Moroccan Riad", desc: "Intricate tilework & arches", tag: "Moroccan" },
-    { title: "Futuristic Pod", desc: "Curved resin & smart glass", tag: "Futuristic" },
-    { title: "Wabi-Sabi Retreat", desc: "Imperfect beauty & natural patina", tag: "Wabi-Sabi" },
-    { title: "French Chateau", desc: "Ornate details & regal charm", tag: "French" },
-    { title: "Industrial Loft", desc: "Exposed brick & steel", tag: "Industrial" },
-    { title: "Coastal Serenity", desc: "Driftwood, linen & ocean hues", tag: "Coastal" },
-    { title: "Boho Chic", desc: "Eclectic patterns & global decor", tag: "Bohemian" },
-    { title: "Mid-Century Modern", desc: "Retro curves & walnut", tag: "Mid-Century" },
-    { title: "Italian Palazzo", desc: "Baroque elegance & frescoes", tag: "Italian" },
-    { title: "Sculptural Penthouse", desc: "Fluid geometry & custom art", tag: "Penthouse" },
-    { title: "Earth Dwelling", desc: "Rammed earth & organic flow", tag: "Sustainable" }
+
+  const galleryTitles = [
+    "Ethereal Monochrome", "Golden Hour Villa", "Minimalist Sanctuary", "Botanical Atrium",
+    "Neo-Classical Lounge", "Rustic Heritage", "Mediterranean Breeze", "Dark Academia",
+    "Zen Tea House", "Art Deco Revival", "Urban Jungle", "Scandinavian Hygge",
+    "Moroccan Riad", "Futuristic Pod", "Wabi-Sabi Retreat", "French Chateau",
+    "Industrial Loft", "Coastal Serenity", "Boho Chic", "Mid-Century Modern",
+    "Italian Palazzo", "Sculptural Penthouse", "Earth Dwelling"
   ];
-  
-  // Render Gallery with all images (ensuring clear display)
+
   function renderGallery() {
     const galleryDiv = document.getElementById('dynamicGallery');
     if (!galleryDiv) return;
     galleryDiv.innerHTML = '';
-    
     for (let i = 0; i < userImages.length; i++) {
-      const item = galleryData[i];
-      const imgUrl = userImages[i];
       const card = document.createElement('div');
       card.className = 'design-item';
-      card.setAttribute('data-fullimg', imgUrl);
       card.innerHTML = `
-        <div class="img-holder" style="background-image: url('${imgUrl}');"></div>
+        <div class="img-holder" style="background-image: url('${userImages[i]}');"></div>
         <div class="card-content">
-          <h3 style="font-size: 1.4rem;">${item.title}</h3>
-          <p>${item.desc}</p>
-          <span style="background: #F1E8DE; padding: 4px 12px; border-radius: 40px; font-size: 0.7rem;">${item.tag}</span>
+          <h3 style="font-size: 1.4rem;">${galleryTitles[i]}</h3>
+          <p>Premium interior design crafted by de-SIGNz</p>
+          <span style="background: #F1E8DE; padding: 4px 12px; border-radius: 40px; font-size: 0.7rem;">de-SIGNz</span>
         </div>
       `;
-      // Click to open lightbox for full clarity
-      card.addEventListener('click', (e) => {
-        e.stopPropagation();
-        openLightbox(imgUrl);
-      });
+      card.addEventListener('click', () => openLightbox(userImages[i]));
       galleryDiv.appendChild(card);
     }
   }
-  
-  // Lightbox functionality for clear photo viewing
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightboxImg');
-  const lightboxClose = document.querySelector('.lightbox-close');
-  
-  function openLightbox(imgSrc) {
-    lightboxImg.src = imgSrc;
-    lightbox.classList.add('active');
+
+  function openLightbox(src) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightbox').classList.add('active');
     document.body.style.overflow = 'hidden';
   }
-  
   function closeLightbox() {
-    lightbox.classList.remove('active');
+    document.getElementById('lightbox').classList.remove('active');
     document.body.style.overflow = '';
   }
-  
-  lightboxClose.addEventListener('click', closeLightbox);
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
-  
-  // Set trust section image (use 2nd image for consistency)
-  function setTrustImage() {
-    const trustDiv = document.getElementById('trustImage');
-    if (trustDiv && userImages[1]) {
-      trustDiv.style.backgroundImage = `url('${userImages[1]}')`;
-    }
-  }
-  
-  // AI Knowledge
-  const aiKnowledge = {
-    "japandi": "Japandi blends Japanese minimalism with Scandinavian warmth. Use light wood, neutral tones, and functional ceramics.",
-    "biophilic": "Biophilic design connects nature indoors — living walls, natural light, organic textures and water features.",
-    "modern luxury": "High-end minimalism with bold art, metallic accents, plush velvets and statement lighting.",
-    "color palette": "2025 trending: warm earths, sage green, terracotta, deep indigo, and creamy off-whites.",
-    "sustainable": "We recommend recycled timber, low-VOC paints, and energy-smart fixtures.",
-    "default": "I can suggest styles like Japandi, Biophilic, Modern Classic, or provide color advice. Ask anything!"
-  };
-  
-  function getAIResponse(query) {
-    const q = query.toLowerCase();
-    if (q.includes("japandi")) return aiKnowledge.japandi;
-    if (q.includes("biophil") || q.includes("nature")) return aiKnowledge.biophilic;
-    if (q.includes("luxury") || q.includes("premium")) return aiKnowledge["modern luxury"];
-    if (q.includes("color") || q.includes("palette") || q.includes("shade")) return aiKnowledge["color palette"];
-    if (q.includes("sustainable") || q.includes("eco")) return aiKnowledge.sustainable;
-    return aiKnowledge.default;
-  }
-  
-  function setupAI() {
-    const bubble = document.getElementById('aiBubbleBtn');
-    const modal = document.getElementById('aiModal');
-    const closeBtn = document.getElementById('closeAi');
-    const askBtn = document.getElementById('askAiBtn');
-    const userInput = document.getElementById('aiUserInput');
-    const responseDiv = document.getElementById('aiResponseMsg');
-    
-    bubble.addEventListener('click', () => modal.classList.toggle('hidden-ai'));
-    closeBtn.addEventListener('click', () => modal.classList.add('hidden-ai'));
-    askBtn.addEventListener('click', () => {
-      const question = userInput.value.trim();
-      if (question === "") {
-        responseDiv.innerHTML = "💡 Ask me about Japandi, biophilic design, color trends or sustainable materials!";
-        return;
-      }
-      responseDiv.innerHTML = `✨ ${getAIResponse(question)}`;
-      userInput.value = '';
-    });
-    userInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') askBtn.click(); });
-  }
-  
-  function setupContactFeatures() {
-    const copyBtn = document.getElementById('copyPhoneBtn');
-    if (copyBtn) {
-      copyBtn.addEventListener('click', () => {
-        navigator.clipboard.writeText("919539925568").then(() => {
-          copyBtn.innerHTML = "✓ Copied!";
-          setTimeout(() => copyBtn.innerHTML = "Copy Number <i class='fas fa-copy'></i>", 1800);
-        });
-      });
-    }
-    const whatsappBtn = document.getElementById('whatsappIndiaBtn');
-    if (whatsappBtn) {
-      whatsappBtn.addEventListener('click', () => window.open('https://wa.me/919539925568?text=Hello%20DeSingnz%2C%20I%27m%20interested%20in%20your%20AI%20interior%20design%20services.', '_blank'));
-    }
-    const callIndiaBtn = document.getElementById('callIndiaBtn');
-    if (callIndiaBtn) {
-      callIndiaBtn.addEventListener('click', () => window.location.href = 'tel:+919539410051');
-    }
-    const callNav = document.getElementById('callNavBtn');
-    if (callNav) {
-      callNav.addEventListener('click', (e) => { e.preventDefault(); window.location.href = 'tel:+919539925568'; });
-    }
-    const scrollBtn = document.getElementById('scrollToContact');
-    if (scrollBtn) scrollBtn.addEventListener('click', () => document.getElementById('contactZone').scrollIntoView({ behavior: 'smooth' }));
-    const exploreBtn = document.getElementById('exploreGalleryBtn');
-    if (exploreBtn) exploreBtn.addEventListener('click', () => document.getElementById('galleryMain').scrollIntoView({ behavior: 'smooth' }));
-  }
-  
-  // Initialize everything
-  function init() {
-    renderGallery();
-    setTrustImage();
-    setupAI();
-    setupContactFeatures();
-  }
-  
-  init();
-</script>
-</body>
-</html>
+  document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+  document.getElementById('lightbox').addEventListener('click', (e) => { if (e.target === document.getElementById('lightbox')) closeLightbox(); });
+
+  document.getElementById('tr
