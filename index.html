@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+  <title>de-SIGNz | Interior's & Builder's - AI Powered Interior Design</title>
+  <!-- Google Fonts + Font Awesome + Material Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #FDFBF7;
+      color: #1C1C1A;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: #cc3311;
+      color: white;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* ========== GLASS NAVBAR ========== */
+    .glass-nav {
+      background: rgba(255, 253, 248, 0.95);
+      backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(204, 51, 17, 0.15);
+    }
+
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: 'Space Grotesk', monospace;
+      font-weight: 800;
+      font-size: 28px;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #cc3311, #ff5533);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #2C2C28;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #cc3311;
+    }
+
+    .contact-pill {
+      background: #1F1B17;
+      color: #F6EDE2 !important;
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+    }
+
+    .contact-pill:hover {
+      background: #cc3311;
+      transform: scale(1.02);
+    }
+
+    /* ========== HERO SECTION ========== */
+    .hero-modern {
+      padding: 90px 0 70px;
+      background: radial-gradient(circle at 10% 30%, #FCF8F2, #F9F2EA);
+    }
+
+    .hero-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .hero-left {
+      flex: 1.2;
+    }
+
+    .hero-badge {
+      background: rgba(204, 51, 17, 0.1);
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #cc3311;
+      margin-bottom: 24px;
+    }
+
+    .hero-left h1 {
+      font-size: 3.8rem;
+      line-height: 1.15;
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
+      margin-bottom: 24px;
+      color: #1E1915;
+    }
+
+    .red-name {
+      color: #cc3311;
+      font-size: 4rem;
+      display: inline-block;
+      background: linear-gradient(135deg, #cc3311, #ff5533);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-decoration: underline;
+      text-decoration-color: #cc3311;
+      text-underline-offset: 12px;
+    }
+
+    .hero-left p {
+      font-size: 1.1rem;
+      color: #5A534A;
+      max-width: 90%;
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: #cc3311;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 12px 18px -8px rgba(204, 51, 17, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: #aa2200;
+      transform: scale(1.02);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #D9CABA;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-outline:hover {
+      border-color: #cc3311;
+      color: #cc3311;
+    }
+
+    .hero-right {
+      flex: 0.9;
+      background: rgba(255, 255, 245, 0.6);
+      backdrop-filter: blur(4px);
+      border-radius: 32px;
+      padding: 32px;
+      border: 1px solid #EFE5DA;
+    }
+
+    .stat-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .stat-item .number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      font-family: 'Space Grotesk';
+      color: #cc3311;
+    }
+
+    /* ========== GALLERY SECTION - FULL IMAGES NO CUT ========== */
+    .gallery-section {
+      padding: 100px 0;
+      background: white;
+    }
+
+    .section-title {
+      font-size: 2.6rem;
+      font-weight: 700;
+      text-align: center;
+      font-family: 'Space Grotesk';
+    }
+
+    .section-sub {
+      text-align: center;
+      color: #7F6E5D;
+      margin-top: 12px;
+      margin-bottom: 56px;
+    }
+
+    .masonry-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .design-item {
+      border-radius: 24px;
+      overflow: hidden;
+      background: #FFFFFF;
+      transition: all 0.4s ease;
+      box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+
+    .design-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 45px -16px rgba(204, 51, 17, 0.25);
+    }
+
+    /* IMPORTANT: Full image visible, no crop */
+    .img-holder {
+      width: 100%;
+      height: 350px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #f5f0ea;
+      transition: transform 0.4s ease;
+    }
+
+    .design-item:hover .img-holder {
+      transform: scale(1.02);
+    }
+
+    /* No text below images - just de-SIGNz brand */
+    .card-content {
+      padding: 16px 20px 20px;
+      text-align: center;
+      border-top: 1px solid #f0e8df;
+    }
+
+    .brand-tag {
+      display: inline-block;
+      background: #f5ede5;
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #cc3311;
+      letter-spacing: 1px;
+    }
+
+    /* ========== LIGHTBOX - FULLSCREEN IMAGE VIEW ========== */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.96);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .lightbox-close:hover {
+      color: #cc3311;
+      transform: scale(1.1);
+    }
+
+    /* ========== AI ASSISTANT ========== */
+    .ai-assistant {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 1100;
+    }
+
+    .ai-bubble {
+      background: #1A1A17;
+      width: 60px;
+      height: 60px;
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+      border: 1px solid #cc3311;
+      transition: 0.2s;
+    }
+
+    .ai-bubble:hover {
+      transform: scale(1.05);
+      background: #cc3311;
+    }
+
+    .ai-bubble i {
+      font-size: 28px;
+      color: #EEDDCB;
+    }
+
+    .ai-modal {
+      position: fixed;
+      bottom: 100px;
+      right: 28px;
+      width: 340px;
+      background: #FFFFFFF0;
+      backdrop-filter: blur(20px);
+      border-radius: 28px;
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(204, 51, 17, 0.3);
+      padding: 20px;
+      transition: 0.2s;
+      z-index: 1100;
+    }
+
+    .hidden-ai {
+      display: none;
+    }
+
+    .ai-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #EADCCF;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+    }
+
+    .ai-header h4 {
+      color: #cc3311;
+      font-weight: 700;
+    }
+
+    .ai-response {
+      background: #F6F1EA;
+      border-radius: 20px;
+      padding: 12px;
+      margin: 12px 0;
+      font-size: 0.85rem;
+      min-height: 70px;
+      line-height: 1.5;
+    }
+
+    .ai-input-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .ai-input-group input {
+      flex: 1;
+      border: 1px solid #DDD0C0;
+      border-radius: 50px;
+      padding: 10px 15px;
+      outline: none;
+      font-size: 0.8rem;
+    }
+
+    .ai-input-group button {
+      background: #cc3311;
+      border: none;
+      border-radius: 40px;
+      padding: 0 16px;
+      color: white;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    /* ========== TRUST SECTION ========== */
+    .trust-premium {
+      background: #F6F0E8;
+      padding: 90px 0;
+    }
+
+    .trust-flex {
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .trust-left {
+      flex: 1;
+    }
+
+    .trust-left h2 {
+      font-size: 2.3rem;
+      font-weight: 700;
+    }
+
+    .signature {
+      width: 80px;
+      height: 3px;
+      background: #cc3311;
+      margin: 20px 0;
+    }
+
+    .quote-text {
+      font-style: italic;
+      font-size: 1.1rem;
+      border-left: 3px solid #cc3311;
+      padding-left: 22px;
+      margin-top: 20px;
+    }
+
+    .trust-right {
+      flex: 1;
+      min-height: 340px;
+      border-radius: 32px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #e8e0d5;
+    }
+
+    /* ========== CONTACT SECTION ========== */
+    .contact-showcase {
+      background: #1a120c;
+      color: #F0E7DD;
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    .contact-gold {
+      background: #2a221c;
+      border-radius: 48px;
+      padding: 48px;
+      max-width: 950px;
+      margin: auto;
+      border: 1px solid #cc331155;
+    }
+
+    .phone-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .phone-card {
+      background: rgba(255,250,240,0.08);
+      backdrop-filter: blur(4px);
+      border-radius: 60px;
+      padding: 12px 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 1px solid #cc331155;
+      transition: 0.2s;
+    }
+
+    .phone-card i {
+      font-size: 1.2rem;
+      color: #cc3311;
+    }
+
+    .phone-card a {
+      color: #FFEFE0;
+      text-decoration: none;
+    }
+
+    .phone-card:hover {
+      background: #cc3311;
+      transform: scale(1.02);
+    }
+    .phone-card:hover a, .phone-card:hover i {
+      color: white;
+    }
+
+    .big-phone {
+      font-size: 1.4rem;
+      font-weight: 800;
+      background: #cc3311;
+      display: inline-block;
+      padding: 10px 26px;
+      border-radius: 70px;
+      color: white;
+      margin: 12px 0;
+    }
+
+    .action-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .wa-btn {
+      background: #25D366;
+      color: #1C1C1A;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .wa-btn:hover {
+      transform: scale(1.02);
+      opacity: 0.95;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: #12100E;
+      padding: 48px 0 32px;
+      color: #B8AFA3;
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .social-links span {
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .social-links span:hover {
+      color: #cc3311;
+    }
+
+    /* ========== DEV BADGE ========== */
+    .dev-badge {
+      position: fixed;
+      bottom: 28px;
+      left: 28px;
+      background: rgba(20, 20, 20, 0.8);
+      backdrop-filter: blur(12px);
+      padding: 8px 16px;
+      border-radius: 60px;
+      font-size: 0.7rem;
+      color: #F3E7DB;
+      font-family: monospace;
+      border-left: 3px solid #cc3311;
+      pointer-events: none;
+      z-index: 1100;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 820px) {
+      .container {
+        padding: 0 24px;
+      }
+      .hero-left h1 {
+        font-size: 2.2rem;
+      }
+      .red-name {
+        font-size: 2.2rem;
+      }
+      .hero-left p {
+        max-width: 100%;
+      }
+      .masonry-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .img-holder {
+        height: 280px;
+      }
+      .phone-card {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+      }
+      .ai-modal {
+        width: 280px;
+        right: 16px;
+        bottom: 80px;
+      }
+      .big-phone {
+        font-size: 1.1rem;
+        padding: 8px 18px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .img-holder {
+        height: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="glass-nav">
+  <div class="container nav-flex">
+    <div class="logo">de-SIGNz</div>
+    <div class="nav-links">
+      <a href="#">Studio</a>
+      <a href="#">Portfolio</a>
+      <a href="#">Journal</a>
+      <a href="#" class="contact-pill" id="callNavBtn"><i class="fas fa-phone-alt"></i> +91 95399 25568</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero-modern">
+    <div class="container hero-wrapper">
+      <div class="hero-left">
+        <div class="hero-badge">AI-DESIGN FUSION • SINCE 2015</div>
+        <h1>Where vision meets <br><span class="red-name">de-SIGNz</span></h1>
+        <p>de-SIGNz blends timeless craftsmanship with AI-augmented creativity — bespoke interiors that breathe authenticity and innovation.</p>
+        <div class="btn-group">
+          <button class="btn-primary" id="exploreGalleryBtn">Explore masterpieces →</button>
+          <button class="btn-outline" id="scrollToContact">Talk to designer</button>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="stat-grid">
+          <div class="stat-item"><span class="number">480+</span><br>completed visions</div>
+          <div class="stat-item"><span class="number">42</span><br>awards & nominations</div>
+          <div class="stat-item"><span class="number">100%</span><br>trust & transparency</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY SECTION - ONLY IMAGES, NO NAMES ========== -->
+  <section class="gallery-section" id="galleryMain">
+    <div class="container">
+      <h2 class="section-title">Curated spatial narratives</h2>
+      <div class="section-sub">Iconic residences, boutique hotels & private sanctuaries</div>
+      <div class="masonry-grid" id="dynamicGallery"></div>
+    </div>
+  </section>
+
+  <!-- ========== TRUST SECTION ========== -->
+  <section class="trust-premium">
+    <div class="container trust-flex">
+      <div class="trust-left">
+        <h2>Deeply researched, emotionally resonant.</h2>
+        <div class="signature"></div>
+        <p>Every project at de-SIGNz undergoes a rigorous research phase — material psychology, spatial flow, and biophilic alignment. Our global team of architects & curators ensures a signature that is both timeless and future-forward.</p>
+        <div class="quote-text">“Design is the silent ambassador of your brand & soul — we make it speak with integrity.” — Design Principal, de-SIGNz</div>
+      </div>
+      <div class="trust-right" id="trustImage"></div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section class="contact-showcase" id="contactZone">
+    <div class="contact-gold">
+      <i class="fas fa-star-of-life" style="font-size: 2rem; color: #cc3311;"></i>
+      <h3 style="font-size: 2rem; margin: 12px 0;">Begin your journey</h3>
+      <p>Speak directly with a senior design architect — calls, WhatsApp & virtual consultations.</p>
+      
+      <div class="phone-grid">
+        <div class="phone-card"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919539925568" target="_blank">+91 95399 25568</a></div>
+        <div class="phone-card"><i class="fas fa-phone-alt"></i> <a href="tel:+919539410051">+91 95394 10051</a></div>
+        <div class="phone-card"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919744549856" target="_blank">+91 97445 49856</a></div>
+      </div>
+      
+      <div class="big-phone">de-SIGNz | Interior's & Builder's</div>
+      <div class="big-phone" style="font-size:1rem; background:#4A3A2C; color:#EFDFCF;">4/187 A, ALUVA</div>
+      
+      <div class="action-buttons">
+        <button class="btn-primary" id="copyPhoneBtn">Copy Number <i class="fas fa-copy"></i></button>
+        <button class="wa-btn" id="whatsappIndiaBtn"><i class="fab fa-whatsapp"></i> WhatsApp Now</button>
+        <button class="btn-outline" id="callIndiaBtn" style="background:#3D2C1F; border:none; color:#FFEAD4;"><i class="fas fa-phone"></i> Call +91 95394 10051</button>
+      </div>
+      <p style="margin-top: 24px; font-size: 0.75rem;">Mon-Fri: 9AM–8PM IST | WhatsApp & Video available globally</p>
+    </div>
+  </section>
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="container">
+    <div class="social-links">
+      <span><i class="fab fa-instagram"></i> Instagram</span>
+      <span><i class="fab fa-pinterest"></i> Pinterest</span>
+      <span><i class="fab fa-linkedin"></i> LinkedIn</span>
+    </div>
+    <p>© 2025 de-SIGNz — AI augmented interior intelligence | Interior's & Builder's | 4/187 A, ALUVA</p>
+  </div>
+</footer>
+
+<!-- ========== LIGHTBOX ========== -->
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightboxImg" src="" alt="Full view">
+</div>
+
+<!-- ========== AI ASSISTANT ========== -->
+<div class="ai-assistant">
+  <div class="ai-bubble" id="aiBubbleBtn">
+    <i class="material-icons-round">auto_awesome</i>
+  </div>
+  <div id="aiModal" class="ai-modal hidden-ai">
+    <div class="ai-header">
+      <h4>✨ de-SIGNz AI</h4>
+      <i class="fas fa-times" id="closeAi" style="cursor: pointer;"></i>
+    </div>
+    <div class="ai-response" id="aiResponseMsg">Hello! I'm your design concierge. Ask me about styles, materials, or trending palettes.</div>
+    <div class="ai-input-group">
+      <input type="text" id="aiUserInput" placeholder="e.g., Japandi or biophilic design...">
+      <button id="askAiBtn">Ask</button>
+    </div>
+    <p style="font-size: 10px; margin-top: 10px; opacity: 0.6; text-align: center;">Powered by de-SIGNz Material Library</p>
+  </div>
+</div>
+
+<!-- ========== DEV BADGE ========== -->
+<div class="dev-badge">
+  <i class="fas fa-code-branch"></i> de-SIGNz • Interior's & Builder's • ALUVA
+</div>
+
+<script>
+  // ========== YOUR 10 IMAGES (exactly as provided) ==========
+  const designImages = [
+    "https://i.ibb.co/xtyWnBqV/1.jpg",
+    "https://i.ibb.co/V0SPGC7C/2.jpg",
+    "https://i.ibb.co/qLqYGCDL/3.jpg",
+    "https://i.ibb.co/cXZBF5yR/4.jpg",
+    "https://i.ibb.co/d4JnGxnR/5.jpg",
+    "https://i.ibb.co/cSr4Y6dc/6.jpg",
+    "https://i.ibb.co/395c1cfs/7.jpg",
+    "https://i.ibb.co/8gsMFQcV/8.jpg",
+    "https://i.ibb.co/qFkPnKVQ/9.jpg",
+    "https://i.ibb.co/HfqzQcFw/10.jpg"
+  ];
+
+  // Render Gallery - NO NAMES, only de-SIGNz brand
+  function renderGallery() {
+    const galleryDiv = document.getElementById('dynamicGallery');
+    if (!galleryDiv) return;
+    galleryDiv.innerHTML = '';
+    
+    for (let i = 0; i < designImages.length; i++) {
+      const card = document.createElement('div');
+      card.className = 'design-item';
+      card.innerHTML = `
+        <div class="img-holder" style="background-image: url('${designImages[i]}'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
+        <div class="card-content">
+          <span class="brand-tag"><i class="fas fa-crown"></i> de-SIGNz</span>
+        </div>
+      `;
+      card.addEventListener('click', () => openLightbox(designImages[i]));
+      galleryDiv.appendChild(card);
+    }
+  }
+
+  // Lightbox Functions
+  function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    lightboxImg.src = src;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  
+  document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+  document.getElementById('lightbox').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('lightbox')) closeLightbox();
+  });
+
+  // Set Trust Section Image (first image)
+  const trustImage = document.getElementById('trustImage');
+  if (trustImage && designImages[0]) {
+    trustImage.style.backgroundImage = `url('${designImages[0]}')`;
+    trustImage.style.backgroundSize = "contain";
+    trustImage.style.backgroundColor = "#e8e0d5";
+  }
+
+  // ========== AI ASSISTANT LOGIC ==========
+  const aiKnowledge = {
+    "japandi": "✨ Japandi blends Japanese minimalism with Scandinavian warmth. Light wood, neutral tones, and functional ceramics.",
+    "biophilic": "🌿 Biophilic design connects nature indoors — living walls, natural light, organic textures, and water features.",
+    "luxury": "💎 High-end minimalism with bold art, metallic accents, plush velvets, and statement lighting.",
+    "color": "🎨 2025 trending palettes: warm earths, sage green, terracotta, deep indigo, and creamy off-whites.",
+    "sustainable": "🌱 We recommend recycled timber, low-VOC paints, and energy-smart fixtures.",
+    "modern": "🏛️ Modern classic: clean lines, neutral bases, textured layers, and functional art pieces.",
+    "default": "💡 I can suggest styles like Japandi, Biophilic, Modern Classic, Luxury, or provide color advice. Ask me anything about interior design!"
+  };
+  
+  function getAIResponse(query) {
+    const q = query.toLowerCase();
+    if (q.includes("japandi")) return aiKnowledge.japandi;
+    if (q.includes("biophil") || q.includes("nature") || q.includes("plant")) return aiKnowledge.biophilic;
+    if (q.includes("luxury") || q.includes("premium") || q.includes("rich")) return aiKnowledge.luxury;
+    if (q.includes("color") || q.includes("palette") || q.includes("shade") || q.includes("trend")) return aiKnowledge.color;
+    if (q.includes("sustainable") || q.includes("eco") || q.includes("green")) return aiKnowledge.sustainable;
+    if (q.includes("modern") || q.includes("contemporary")) return aiKnowledge.modern;
+    return aiKnowledge.default;
+  }
+  
+  // Setup AI Assistant
+  const aiBubble = document.getElementById('aiBubbleBtn');
+  const aiModal = document.getElementById('aiModal');
+  const closeAi = document.getElementById('closeAi');
+  const askBtn = document.getElementById('askAiBtn');
+  const aiInput = document.getElementById('aiUserInput');
+  const aiResponse = document.getElementById('aiResponseMsg');
+  
+  aiBubble.addEventListener('click', () => aiModal.classList.toggle('hidden-ai'));
+  closeAi.addEventListener('click', () => aiModal.classList.add('hidden-ai'));
+  
+  askBtn.addEventListener('click', () => {
+    const question = aiInput.value.trim();
+    if (question === "") {
+      aiResponse.innerHTML = "💡 Ask me about Japandi, Biophilic, Luxury, Color trends, or Sustainable materials!";
+      return;
+    }
+    aiResponse.innerHTML = getAIResponse(question);
+    aiInput.value = '';
+  });
+  
+  aiInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') askBtn.click();
+  });
+
+  // ========== CONTACT FEATURES ==========
+  // Copy phone number
+  document.getElementById('copyPhoneBtn').addEventListener('click', () => {
+    navigator.clipboard.writeText("919539925568");
+    const btn = document.getElementById('copyPhoneBtn');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = "✓ Copied!";
+    setTimeout(() => btn.innerHTML = originalText, 2000);
+  });
+  
+  // WhatsApp button
+  document.getElementById('whatsappIndiaBtn').addEventListener('click', () => {
+    window.open('https://wa.me/919539925568?text=Hello%20de-SIGNz%2C%20I%27m%20interested%20in%20your%20interior%20design%20services.', '_blank');
+  });
+  
+  // Call India button
+  document.getElementById('callIndiaBtn').addEventListener('click', () => {
+    window.location.href = 'tel:+919539410051';
+  });
+  
+  // Navbar call button
+  document.getElementById('callNavBtn').addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = 'tel:+919539925568';
+  });
+  
+  // Scroll to contact
+  document.getElementById('scrollToContact').addEventListener('click', () => {
+    document.getElementById('contactZone').scrollIntoView({ behavior: 'smooth' });
+  });
+  
+  // Scroll to gallery
+  document.getElementById('exploreGalleryBtn').addEventListener('click', () => {
+    document.getElementById('galleryMain').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Initialize Gallery
+  renderGallery();
+</script>
+</body>
+</html>
