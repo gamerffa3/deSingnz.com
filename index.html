@@ -2,214 +2,470 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>de-SIGNz Interiors & Builders</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>de-SIGNz Interiors & Builders | Premium Interior & Construction</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",sans-serif}
-html{scroll-behavior:smooth}
-body{background:#f5f7fb}
-
-/* HEADER */
-header{
-position:fixed;
-top:0;
-width:100%;
-background:#0a2a66;
-color:#fff;
-padding:15px;
-text-align:center;
-font-weight:600;
-z-index:1000;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif;
 }
 
-/* SECTION */
-section{
-padding:90px 20px;
-min-height:100vh;
+html {
+  scroll-behavior: smooth;
 }
 
-h2{
-margin-bottom:15px;
-color:#0a2a66;
+body {
+  background: #f5f7fc;
+  color: #111827;
 }
 
-/* HERO */
-.hero{
-background:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover no-repeat;
-display:flex;
-align-items:center;
-color:#fff;
-position:relative;
+/* HEADER - clean, professional */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #0a2a66;
+  color: #ffffff;
+  padding: 18px 28px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: -0.3px;
+  z-index: 1000;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(0px);
 }
 
-.hero::after{
-content:"";
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.5);
+/* SECTIONS - spacious, consistent */
+section {
+  padding: 100px 32px;
+  max-width: 1280px;
+  margin: 0 auto;
+  min-height: auto;
 }
 
-.hero-text{
-position:relative;
-z-index:1;
-max-width:300px;
+/* headings with brand underline */
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0a2a66;
+  margin-bottom: 32px;
+  position: relative;
+  display: inline-block;
+  letter-spacing: -0.3px;
 }
 
-.hero h1{font-size:30px;margin-bottom:10px}
-
-/* CARD */
-.card{
-background:#fff;
-padding:15px;
-margin-bottom:12px;
-border-radius:10px;
-box-shadow:0 3px 12px rgba(0,0,0,0.1);
+h2:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 56px;
+  height: 3px;
+  background: #d4af37;
+  border-radius: 3px;
 }
 
-/* GALLERY */
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-gap:12px;
+/* HERO SECTION - premium look */
+.hero {
+  background: linear-gradient(102deg, rgba(10,42,102,0.88) 0%, rgba(10,42,102,0.7) 100%), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #ffffff;
+  border-radius: 0 0 36px 36px;
+  margin-top: 0;
+  padding: 170px 32px;
+  min-height: 88vh;
 }
 
-.gallery img{
-width:100%;
-height:180px;
-object-fit:cover;
-border-radius:10px;
+.hero-text {
+  max-width: 620px;
+  position: relative;
+  z-index: 2;
 }
 
-/* CONTACT */
-.contact a{
-display:block;
-margin-top:8px;
-padding:10px;
-background:#f1f4ff;
-border-radius:8px;
-text-decoration:none;
-color:#0a2a66;
-font-weight:500;
+.hero h1 {
+  font-size: 3.4rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  letter-spacing: -1px;
+  line-height: 1.2;
 }
 
-.contact a:hover{
-background:#0a2a66;
-color:#fff;
+.hero p {
+  font-size: 1.25rem;
+  font-weight: 500;
+  opacity: 0.94;
+  margin-bottom: 8px;
 }
 
-/* FLOAT */
-.float{
-position:fixed;
-right:10px;
-bottom:80px;
-display:flex;
-flex-direction:column;
-gap:10px;
+/* modern card component */
+.card {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 28px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+  border: 1px solid #edf2f7;
 }
 
-.float a{
-background:#0a2a66;
-color:#fff;
-padding:12px;
-border-radius:8px;
-text-decoration:none;
+.card:hover {
+  box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.08);
 }
 
-/* NAV */
-nav{
-position:fixed;
-bottom:0;
-width:100%;
-background:#fff;
-display:flex;
-justify-content:space-around;
-border-top:1px solid #ccc;
+/* about text readability */
+.about-text p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  color: #1e293b;
 }
 
-nav a{
-padding:12px;
-font-size:12px;
-text-decoration:none;
-color:#333;
+/* SERVICES GRID - no emojis, pure professional */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.service-item {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.25s;
+  border: 1px solid #eef2ff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+  cursor: default;
+}
+
+.service-item:hover {
+  border-color: #0a2a66;
+  transform: translateY(-3px);
+  background: #ffffff;
+  box-shadow: 0 20px 28px -12px rgba(10, 42, 102, 0.12);
+}
+
+.service-icon {
+  width: 44px;
+  height: 44px;
+  background: #eef3fc;
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #0a2a66;
+  font-family: 'Inter', monospace;
+}
+
+.service-text {
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: #0f172a;
+  letter-spacing: -0.2px;
+  line-height: 1.3;
+}
+
+/* gallery grid refined */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 22px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 24px;
+  transition: transform 0.3s ease, box-shadow 0.2s;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+}
+
+.gallery img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 28px -8px rgba(0, 0, 0, 0.15);
+}
+
+/* contact section - clean, no icons only text (professional) */
+.contact a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 24px;
+  margin-bottom: 14px;
+  background: #f8fafd;
+  border-radius: 60px;
+  text-decoration: none;
+  color: #0a2a66;
+  font-weight: 600;
+  transition: all 0.2s;
+  border: 1px solid #e2edf7;
+}
+
+.contact a:hover {
+  background: #0a2a66;
+  color: white;
+  border-color: #0a2a66;
+  transform: translateX(6px);
+}
+
+/* FLOATING BUTTONS - pure text, no emoji */
+.float {
+  position: fixed;
+  right: 24px;
+  bottom: 95px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 999;
+}
+
+.float a {
+  background: #0a2a66;
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 44px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s;
+  letter-spacing: 0.3px;
+}
+
+.float a:hover {
+  background: #d4af37;
+  color: #0a2a66;
+  transform: scale(1.03);
+}
+
+/* bottom navigation - minimal, professional */
+nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #eef2f6;
+  padding: 12px 0 22px;
+  z-index: 1000;
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.02);
+}
+
+nav a {
+  padding: 8px 0;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #334155;
+  transition: 0.2s;
+  letter-spacing: 0.2px;
+}
+
+nav a:hover {
+  color: #0a2a66;
+  transform: translateY(-2px);
+}
+
+/* bottom padding for fixed nav */
+body {
+  padding-bottom: 74px;
+}
+
+/* responsiveness */
+@media (max-width: 700px) {
+  section {
+    padding: 80px 20px;
+  }
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+  .hero {
+    padding: 130px 20px;
+    min-height: 75vh;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-item {
+    padding: 16px 18px;
+  }
+  .float {
+    right: 16px;
+    bottom: 85px;
+  }
+  .float a {
+    padding: 10px 18px;
+    font-size: 0.8rem;
+  }
+}
+
+/* brand accent badge (text only) */
+.badge-brand {
+  background: rgba(212, 175, 55, 0.12);
+  display: inline-block;
+  border-radius: 32px;
+  padding: 6px 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #d4af37;
+  letter-spacing: 0.5px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+/* additional services section background */
+.services-section-bg {
+  background: #fbfdff;
+}
+
+/* small note line */
+.footer-note {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 16px 24px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #2c3e66;
+  border: 1px solid #eef2ff;
+  margin-top: 28px;
 }
 </style>
 </head>
-
 <body>
 
 <header>de-SIGNz Interiors & Builders</header>
 
-<!-- HOME -->
+<!-- HERO SECTION -->
 <section id="home" class="hero">
 <div class="hero-text">
-<h1>Modern Interior Designs</h1>
-<p>Design • Build • Transform</p>
+<span class="badge-brand">EST. 2003 | TURNKEY SOLUTIONS</span>
+<h1>Modern Interiors<br>Precision Crafted</h1>
+<p>Design · Build · Transform — Complete residential & commercial interiors</p>
 </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ABOUT SECTION (rich description, no emojis) -->
 <section id="about">
 <h2>About Us</h2>
-<div class="card">
-<p><strong>de-SIGNz Interiors & Builders</strong> is a trusted interior design and construction company delivering modern, high-quality solutions since 2003.</p>
+<div class="card about-text">
+<p><strong>de-SIGNz Interiors & Builders</strong> is a premier interior design and construction company delivering high-quality, contemporary solutions since 2003. We have successfully executed over 1200+ projects ranging from luxury residences to corporate offices, retail spaces, and hospitality interiors.</p>
 
-<p>We specialize in false ceiling, wall partitions, modular kitchen, wardrobe, glass work, and ACP work for residential and commercial projects.</p>
+<p>Our expertise covers <strong>false ceilings, grid ceilings, wall partitions, modular kitchens, wardrobes, glass partitions, ACP cladding, painting & polishing, EPS Rapid Wall Panels, and AAC Panel installations</strong>. Every project reflects superior craftsmanship, innovation, and adherence to timelines.</p>
 
-<p>We focus on quality work, timely completion, and customer satisfaction.</p>
+<p>We believe in transparent pricing, detailed project planning, and complete customer satisfaction. Our design team works closely with clients to translate visions into functional, elegant spaces that stand the test of time.</p>
 </div>
 </section>
 
-<!-- GALLERY -->
+<!-- PROFESSIONAL SERVICES (exact list, emoji-free, corporate style) -->
+<section id="services">
+<h2>Our Core Services</h2>
+<div class="services-grid">
+  <div class="service-item"><div class="service-icon">◧</div><div class="service-text">False Ceiling</div></div>
+  <div class="service-item"><div class="service-icon">▦</div><div class="service-text">Grid Ceiling</div></div>
+  <div class="service-item"><div class="service-icon">⎸</div><div class="service-text">Wall Partitions</div></div>
+  <div class="service-item"><div class="service-icon">⬚</div><div class="service-text">Glass Work</div></div>
+  <div class="service-item"><div class="service-icon">▣</div><div class="service-text">ACP Cladding</div></div>
+  <div class="service-item"><div class="service-icon">◍</div><div class="service-text">Painting & Polishing</div></div>
+  <div class="service-item"><div class="service-icon">◫</div><div class="service-text">Modular Kitchen, Wardrobe & Furniture</div></div>
+  <div class="service-item"><div class="service-icon">▧</div><div class="service-text">EPS Rapid Wall Panel Installation</div></div>
+  <div class="service-item"><div class="service-icon">◨</div><div class="service-text">AAC Panel Installation</div></div>
+</div>
+</section>
+
+<!-- GALLERY SECTION (original images, clean) -->
 <section id="gallery">
-<h2>Our Projects</h2>
-
+<h2>Project Gallery</h2>
 <div class="gallery">
-<img src="https://img.sanishtech.com/u/da908338baccf2d36c11b8e7bd4ff99a.jpeg">
-<img src="https://img.sanishtech.com/u/8facf50b93a7e30734fb733aa78bdc61.jpeg">
-<img src="https://img.sanishtech.com/u/e87cc1804ec717f9e66a0482fbcf9611.jpeg">
-<img src="https://img.sanishtech.com/u/f5861c5350505d1ca19a9cc7e6802c50.jpeg">
-<img src="https://img.sanishtech.com/u/1b92b5c3dab854e0f3fcae0683653777.jpeg">
-
-<img src="https://images.unsplash.com/photo-1600210492493-0946911123ea">
-<img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6">
-<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c">
-<img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0">
+  <img src="https://img.sanishtech.com/u/da908338baccf2d36c11b8e7bd4ff99a.jpeg" alt="contemporary false ceiling design" loading="lazy">
+  <img src="https://img.sanishtech.com/u/8facf50b93a7e30734fb733aa78bdc61.jpeg" alt="elegant wall partition" loading="lazy">
+  <img src="https://img.sanishtech.com/u/e87cc1804ec717f9e66a0482fbcf9611.jpeg" alt="modular kitchen installation" loading="lazy">
+  <img src="https://img.sanishtech.com/u/f5861c5350505d1ca19a9cc7e6802c50.jpeg" alt="wardrobe and storage solutions" loading="lazy">
+  <img src="https://img.sanishtech.com/u/1b92b5c3dab854e0f3fcae0683653777.jpeg" alt="glass partition and acp work" loading="lazy">
+  <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea" alt="luxury living room design" loading="lazy">
+  <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6" alt="modern residential interior" loading="lazy">
+  <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" alt="corporate office interior" loading="lazy">
+  <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0" alt="contemporary furniture design" loading="lazy">
 </div>
-
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT SECTION (all numbers unchanged, emoji-free) -->
 <section id="contact">
-<h2>Contact Us</h2>
-
+<h2>Get In Touch</h2>
 <div class="card contact">
-
-<a href="tel:9539925568">Fast Call: 95399 25568</a>
-<a href="tel:9744549856">Call: 97445 49856</a>
-<a href="tel:9539410051">Office: 95394 10051</a>
-
-<a href="https://wa.me/919539925568?text=Hello%20de-SIGNz%20Interiors,%20I%20need%20your%20services" target="_blank">
-WhatsApp Chat
-</a>
-
+  <a href="tel:9539925568">Fast Call: 95399 25568</a>
+  <a href="tel:9744549856">Call: 97445 49856</a>
+  <a href="tel:9539410051">Office: 95394 10051</a>
+  <a href="https://wa.me/919539925568?text=Hello%20de-SIGNz%20Interiors,%20I%20need%20your%20services" target="_blank">WhatsApp Inquiry → Instant Response</a>
+</div>
+<div class="footer-note">
+  Free site evaluation & design consultation | Pan-city service
 </div>
 </section>
 
-<!-- FLOAT -->
+<!-- FLOATING ACTION BUTTONS (no emojis, text only) -->
 <div class="float">
-<a href="https://wa.me/919539925568" target="_blank">WhatsApp</a>
-<a href="tel:9539925568">Call</a>
+  <a href="https://wa.me/919539925568" target="_blank">WhatsApp</a>
+  <a href="tel:9539925568">Call</a>
 </div>
 
-<!-- NAV -->
+<!-- BOTTOM NAVIGATION (text only) -->
 <nav>
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
 </nav>
 
+<!-- smooth active nav indicator (professional, no UI break) -->
+<script>
+  (function() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+    
+    function updateActiveNav() {
+      let currentId = '';
+      const scrollPosition = window.scrollY + 140;
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          currentId = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href').substring(1);
+        if (href === currentId) {
+          link.style.color = '#0a2a66';
+          link.style.fontWeight = '700';
+          link.style.borderBottom = 'none';
+        } else {
+          link.style.color = '#4b5563';
+          link.style.fontWeight = '500';
+        }
+      });
+    }
+    
+    window.addEventListener('scroll', updateActiveNav);
+    window.addEventListener('load', updateActiveNav);
+  })();
+</script>
 </body>
 </html>
