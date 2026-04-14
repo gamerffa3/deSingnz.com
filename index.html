@@ -3,12 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DeSingnz</title>
+<title>de-SIGNz Interiors & Builders</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",sans-serif}
-body{scroll-behavior:smooth;background:#f5f7fb}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
+}
 
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#f5f7fb;
+}
+
+/* HEADER */
 header{
 position:fixed;
 top:0;
@@ -17,47 +30,95 @@ background:#0a2a66;
 color:#fff;
 padding:15px;
 text-align:center;
+font-weight:600;
+letter-spacing:1px;
 z-index:1000;
 }
 
+/* SECTIONS */
 section{
-padding:80px 20px;
+padding:90px 20px;
 min-height:100vh;
 }
 
+/* HERO */
 .hero{
+position:relative;
 background:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover no-repeat;
-color:#fff;
 display:flex;
 align-items:center;
+color:#fff;
 }
-.hero h1{font-size:32px;max-width:300px}
 
-.offers .card,
-.menu .card{
+.hero::after{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+top:0;
+left:0;
+}
+
+.hero-content{
+position:relative;
+z-index:1;
+max-width:300px;
+}
+
+.hero h1{
+font-size:30px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:14px;
+opacity:0.9;
+}
+
+/* CARDS */
+.card{
 background:#fff;
 padding:15px;
-margin-bottom:10px;
+margin-bottom:12px;
 border-radius:10px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
+box-shadow:0 3px 12px rgba(0,0,0,0.1);
+transition:0.3s;
 }
 
+.card:hover{
+transform:translateY(-3px);
+}
+
+/* GALLERY */
 .gallery{
 display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:10px;
 }
-.gallery img{width:100%;border-radius:8px}
 
+.gallery img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:8px;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.03);
+}
+
+/* CONTACT */
 .contact a{
 display:block;
 margin-top:10px;
-color:#0a2a66;
 text-decoration:none;
+color:#0a2a66;
 font-weight:500;
 }
 
-/* floating */
+/* FLOAT BUTTONS */
 .float{
 position:fixed;
 right:10px;
@@ -66,6 +127,7 @@ display:flex;
 flex-direction:column;
 gap:10px;
 }
+
 .float a{
 background:#0a2a66;
 color:#fff;
@@ -73,9 +135,10 @@ padding:12px;
 border-radius:8px;
 text-decoration:none;
 font-size:14px;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* bottom nav */
+/* NAV */
 nav{
 position:fixed;
 bottom:0;
@@ -85,31 +148,42 @@ display:flex;
 justify-content:space-around;
 border-top:1px solid #ccc;
 }
+
 nav a{
 padding:12px;
 font-size:12px;
 text-decoration:none;
 color:#333;
+transition:0.3s;
 }
-nav a:hover{color:#0a2a66}
 
+nav a.active{
+color:#0a2a66;
+font-weight:bold;
+}
 </style>
 </head>
 
 <body>
 
-<header>DeSingnz</header>
+<header>de-SIGNz Interiors & Builders</header>
 
+<!-- HOME -->
 <section id="home" class="hero">
-<h1>Modern Interior Designs for Smart Living</h1>
+<div class="hero-content">
+<h1>Modern Interior Designs</h1>
+<p>Premium Interior & Construction Solutions</p>
+</div>
 </section>
 
-<section id="offers" class="offers">
+<!-- OFFERS -->
+<section id="offers">
 <h2>Offers</h2>
-<div class="card">20% Discount on Kitchen</div>
+<div class="card">20% Discount on Modular Kitchen</div>
 <div class="card">Free Site Visit</div>
 </section>
 
+<!-- GALLERY -->
 <section id="gallery">
 <h2>Gallery</h2>
 <div class="gallery">
@@ -120,7 +194,8 @@ nav a:hover{color:#0a2a66}
 </div>
 </section>
 
-<section id="menu" class="menu">
+<!-- MENU -->
+<section id="menu">
 <h2>Menu</h2>
 <div class="card">About Us</div>
 <div class="card">Services</div>
@@ -133,17 +208,39 @@ nav a:hover{color:#0a2a66}
 </div>
 </section>
 
+<!-- FLOAT -->
 <div class="float">
 <a href="https://wa.me/919744549856" target="_blank">WhatsApp</a>
 <a href="tel:9744549856">Call</a>
 </div>
 
+<!-- NAV -->
 <nav>
-<a href="#home">Home</a>
+<a href="#home" class="active">Home</a>
 <a href="#offers">Offers</a>
 <a href="#gallery">Gallery</a>
 <a href="#menu">Menu</a>
 </nav>
+
+<script>
+const links = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+let fromTop = window.scrollY + 100;
+
+links.forEach(link => {
+let section = document.querySelector(link.getAttribute("href"));
+
+if (
+section.offsetTop <= fromTop &&
+section.offsetTop + section.offsetHeight > fromTop
+) {
+links.forEach(l => l.classList.remove("active"));
+link.classList.add("active");
+}
+});
+});
+</script>
 
 </body>
 </html>
