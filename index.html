@@ -6,20 +6,9 @@
 <title>de-SIGNz Interiors & Builders</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:"Segoe UI",sans-serif;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-background:#f5f7fb;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",sans-serif}
+html{scroll-behavior:smooth}
+body{background:#f5f7fb}
 
 /* HEADER */
 header{
@@ -31,23 +20,22 @@ color:#fff;
 padding:15px;
 text-align:center;
 font-weight:600;
-letter-spacing:1px;
 z-index:1000;
 }
 
-/* SECTIONS */
+/* SECTION */
 section{
 padding:90px 20px;
 min-height:100vh;
 }
 
-/* HERO */
+/* HERO (SAME) */
 .hero{
-position:relative;
 background:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover no-repeat;
+color:#fff;
 display:flex;
 align-items:center;
-color:#fff;
+position:relative;
 }
 
 .hero::after{
@@ -60,21 +48,14 @@ top:0;
 left:0;
 }
 
-.hero-content{
+.hero-text{
 position:relative;
 z-index:1;
 max-width:300px;
 }
 
-.hero h1{
-font-size:30px;
-margin-bottom:10px;
-}
-
-.hero p{
-font-size:14px;
-opacity:0.9;
-}
+.hero h1{font-size:30px;margin-bottom:10px}
+.hero p{font-size:14px}
 
 /* CARDS */
 .card{
@@ -83,30 +64,25 @@ padding:15px;
 margin-bottom:12px;
 border-radius:10px;
 box-shadow:0 3px 12px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-3px);
 }
 
 /* GALLERY */
 .gallery{
 display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:10px;
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+gap:12px;
 }
 
 .gallery img{
 width:100%;
-height:200px;
+height:180px;
 object-fit:cover;
-border-radius:8px;
+border-radius:10px;
 transition:0.3s;
 }
 
 .gallery img:hover{
-transform:scale(1.03);
+transform:scale(1.05);
 }
 
 /* CONTACT */
@@ -118,7 +94,7 @@ color:#0a2a66;
 font-weight:500;
 }
 
-/* FLOAT BUTTONS */
+/* FLOAT */
 .float{
 position:fixed;
 right:10px;
@@ -134,8 +110,6 @@ color:#fff;
 padding:12px;
 border-radius:8px;
 text-decoration:none;
-font-size:14px;
-box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
 /* NAV */
@@ -154,12 +128,6 @@ padding:12px;
 font-size:12px;
 text-decoration:none;
 color:#333;
-transition:0.3s;
-}
-
-nav a.active{
-color:#0a2a66;
-font-weight:bold;
 }
 </style>
 </head>
@@ -170,7 +138,7 @@ font-weight:bold;
 
 <!-- HOME -->
 <section id="home" class="hero">
-<div class="hero-content">
+<div class="hero-text">
 <h1>Modern Interior Designs</h1>
 <p>Premium Interior & Construction Solutions</p>
 </div>
@@ -185,23 +153,31 @@ font-weight:bold;
 
 <!-- GALLERY -->
 <section id="gallery">
-<h2>Gallery</h2>
+<h2>Our Projects</h2>
+
 <div class="gallery">
+
+<!-- YOUR IMAGES -->
+<img src="https://img.sanishtech.com/u/da908338baccf2d36c11b8e7bd4ff99a.jpeg">
+<img src="https://img.sanishtech.com/u/8facf50b93a7e30734fb733aa78bdc61.jpeg">
+<img src="https://img.sanishtech.com/u/e87cc1804ec717f9e66a0482fbcf9611.jpeg">
+<img src="https://img.sanishtech.com/u/f5861c5350505d1ca19a9cc7e6802c50.jpeg">
+<img src="https://img.sanishtech.com/u/1b92b5c3dab854e0f3fcae0683653777.jpeg">
+
+<!-- EXTRA -->
 <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea">
 <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6">
 <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c">
 <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0">
+<img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e">
+
 </div>
 </section>
 
-<!-- MENU -->
+<!-- CONTACT -->
 <section id="menu">
-<h2>Menu</h2>
-<div class="card">About Us</div>
-<div class="card">Services</div>
-
+<h2>Contact</h2>
 <div class="card contact">
-<h3>Contact</h3>
 <a href="tel:9744549856">Call 9744549856</a>
 <a href="tel:9539925568">Call 9539925568</a>
 <a href="https://wa.me/919744549856" target="_blank">WhatsApp Chat</a>
@@ -216,31 +192,11 @@ font-weight:bold;
 
 <!-- NAV -->
 <nav>
-<a href="#home" class="active">Home</a>
+<a href="#home">Home</a>
 <a href="#offers">Offers</a>
 <a href="#gallery">Gallery</a>
-<a href="#menu">Menu</a>
+<a href="#menu">Contact</a>
 </nav>
-
-<script>
-const links = document.querySelectorAll("nav a");
-
-window.addEventListener("scroll", () => {
-let fromTop = window.scrollY + 100;
-
-links.forEach(link => {
-let section = document.querySelector(link.getAttribute("href"));
-
-if (
-section.offsetTop <= fromTop &&
-section.offsetTop + section.offsetHeight > fromTop
-) {
-links.forEach(l => l.classList.remove("active"));
-link.classList.add("active");
-}
-});
-});
-</script>
 
 </body>
 </html>
